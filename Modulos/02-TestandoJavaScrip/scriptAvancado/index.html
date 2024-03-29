@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>TODO supply a title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript">
+      //esse valor fica salvo igual o 
+      //cookie e pode ser usado sempre que o 
+      //usuario acessa o mesmo link
+        localStorage.setItem("nome", "Kennedy");
+        localStorage.setItem("VisitasNoSite", 1);
+        //ou 
+        localStorage.nome = "Kennedy";
+        
+      //para acessar o dado salvo
+        document.write(localStorage.getItem("nome"));
+        //ou 
+        localStorage.nome;
+        
+      //Remove o item criado
+        localStorage.removeItem("nome");
+        
+      // tem tbm o sessionStorage que funciona 
+      // igual mas ao fechar o navegado as informações
+      //  sao apagadas
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
