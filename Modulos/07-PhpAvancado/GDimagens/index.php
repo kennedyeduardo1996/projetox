@@ -10,7 +10,7 @@ $altura = 200;
 
 //getimagesize retorna um array com dois valores 
 //largura e altura do arquivo
-//    e o list salva esse dois valores nas duas variaveis
+//e o list salva esse dois valores nas duas variaveis
 list($largura_original, $altura_original) = getimagesize($arquivo);
 
 //proporcao da largura e altura
@@ -42,8 +42,12 @@ imagecopyresampled($imagem_final, $imagem_original,
         $largura, $altura, $largura_original, $altura_original);
 
 //o navegador vai interpretar que esse arquivo(index.php) é uma imagem
-header("Content-Type: image/jpeg");
+//header("Content-Type: image/jpeg");
 
-imagejpeg($imagem_final, "nova.jpg", 75);
+imagejpeg($imagem_final, "mini_imagem.jpg", 100);
+
+echo 'imagem redimencionada';
+
+//no final não estava funcinadno pois não tinha ativado a biblioteca GD
 
 
