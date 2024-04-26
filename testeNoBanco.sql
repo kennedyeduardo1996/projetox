@@ -46,7 +46,7 @@ SELECT * FROM `usuarios` LIMIT 1,3;
 SELECT COUNT(*) AS contagem, faixa_salarial FROM `usuarios` GROUP BY faixa_salarial;
 
 -- INNER JOIN  faz uma ligação entre as tabelas onde o resultado retorna
---  só os resultado que tiveram uma relção com sucesso entre as tabelas 
+--  só os resultado que tiveram uma relação com sucesso entre as tabelas 
 SELECT usuarios.nome, usuarios.faixa_salarial, faixas.titulo 
 FROM `usuarios` INNER JOIN faixas ON faixas.id = usuarios.faixa_salarial;
 
