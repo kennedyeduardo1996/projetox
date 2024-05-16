@@ -1,5 +1,17 @@
 <?php
 
+/*
+ * Classe Categorias 
+ * 
+ * Função getListaCategorias()
+ * Esse método faz um SELECT no banco e pega o todas as categorias .
+ * @return array() com as categorias cadastradas no banco.
+ * 
+ * @package projetox 
+ * @author Kennedy E M Silva <kennedyeduardomartins@gmail.com>
+ * 
+ */
+
 class Categorias {
 
     public function getListaCategorias() {

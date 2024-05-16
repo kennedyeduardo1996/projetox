@@ -1,3 +1,11 @@
+<!--
+* Arquivo de cabeçalho header.php
+* -É feita a requisição do arquivo "config.php".
+* -É carregados os arquivos de css "style" e "bootstrap" inseridos no header.
+* -É feita a verificação se o usuario esta logado defindo assim como será o cabeçalho.
+* 
+*
+-->
 <!DOCTYPE html>
 <?php
 require './config.php';
@@ -8,6 +16,7 @@ require './config.php';
     <title>Classificados com Bootstrap 4</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="../assets/css/style.css"/>   
     <link rel="stylesheet" href="../../assets/css/bootstrap.min.css"/>   
   </head>
   <body>
@@ -28,7 +37,7 @@ require './config.php';
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " href="meus-anuncios.php">Meus Anúcios</a>
+                <a class="nav-link " href="meus-anuncios.php">Meus Anúncios</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="sair.php">Sair</a>

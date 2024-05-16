@@ -1,5 +1,14 @@
 <?php
-
+/*
+ * Arquivo config.php
+ * 
+ * É iniado a sessao
+ * 
+ * É feita a conexão com o banco de dados
+ * @param $pdo variavel global que é usada para realizar a conexão com o banco.
+ * 
+ * 
+ */
 //by Kennedy E M Silva
 session_start();
 global $pdo;

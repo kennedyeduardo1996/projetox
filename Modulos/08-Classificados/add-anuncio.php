@@ -1,8 +1,42 @@
-
 <?php
-//by Kennedy E M Silva
+
+
+/*
+* Pagina add-anuncio.php
+*
+* Formulario para criar um novo anúncio onde envia-se os dados para a mesma pagina e recebe
+* os dados por $_POST
+ * 
+ * É feita a requisição do cabeçalho header.php
+ * É feita a requisição da classe anuncios anuncios.class.php
+ * É feita a requisição da classe categorias categorias.class.php
+*
+ * É feita a verificação se o usuario esta logado $_SESSION["cLogin"] caso não esteja 
+ * o mesmo é enviado para a pagina de login.php
+ * @param $_SESSION["cLogin"] é nome do usuario caso esteja logado
+* 
+ * É feita a verificação do recebimento após o usuario enviar os dados do formulario
+ * e encaminhado os dados para a Função "adicionarAnuncio" da classe "Anuncios".
+ * @param $categoria é o id_categoria da categoria que é o mesmo do banco da tabela categorias.
+ * @param $titulo é o tutulo do anuncio descrito pelo usuario.
+ * @param $valor é o valor do anuncio descrito pelo usuario.
+ * @param $descricao é a descrição do anuncio descrito pelo usuario.
+ * @param $estado é o estado de conservação do anuncio descrito pelo usuario.
+*   
+ * É feito um retorno da Função "getListaCategorias" da classe "Categorias" onde é 
+ * preenchido as tags "<option>" do "<select>"
+ * 
+ * É feita a requisição do footer footer.php
+* 
+ * @package projetox 
+ * @author Kennedy E M Silva <kennedyeduardomartins@gmail.com>
+*
+*/
+
 
 require './pages/header.php';
+require './classes/anuncios.class.php';
+require './classes/categorias.class.php';
 
 if (empty($_SESSION["cLogin"])):
     ?>
@@ -14,7 +48,7 @@ if (empty($_SESSION["cLogin"])):
     exit;
 endif;
 
-require './classes/anuncios.class.php';
+
 
 $a = new Anuncios();
 if (isset($_POST["titulo"]) && !empty($_POST["titulo"])) :
@@ -46,7 +80,7 @@ endif;
           <select class="form-control" name="categoria">
 
             <?php
-            require './classes/categorias.class.php';
+
             $c = new Categorias();
             $cats = $c->getListaCategorias();
             foreach ($cats as $categoria) :
