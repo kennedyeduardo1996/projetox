@@ -192,7 +192,15 @@ $anuncios = $a->getUltimosAnuncios($page, $por_pagina, $filtros);
             <?php
             for ($q = 1; $q <= $total_paginas; $q++) :
                 ?>
-              <li class="page-item <?php echo ($page == $q) ? "active" : ""; ?>"><a class="page-link" href="index.php?p=<?php echo $q; ?>"><?php echo $q; ?></a></li>
+              <li class="page-item <?php echo ($page == $q) ? "active" : ""; ?>">
+                <?php
+//                pega os GET que são os filtro nessa pagina e joga em uma var e depois
+//                adiciona um novo GET["p"], e imprime como url com o "http_build_query".
+                $w = $_GET; 
+                $w["p"] = $q;
+                        ?>
+                <a class="page-link" href="index.php?<?php echo http_build_query($w); ?>"><?php echo $q; ?></a>
+              </li>
               <?php
           endfor;
           ?>
